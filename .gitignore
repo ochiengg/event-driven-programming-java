@@ -1,2 +1,5 @@
 /week04-event-handling/activity5-interactive-form/RegistrationForm/nbproject/private/
 /week04-event-handling/activity5-interactive-form/RegistrationForm/build/
+gitignore
+# Maven output
+week06-javafx/target/

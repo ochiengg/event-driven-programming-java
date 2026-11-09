@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Import JavaFX layouts and controls -->
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- The root container. fx:controller links this UI to our Java class -->
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.university.StudentController">
+
+    <!-- Padding around the whole layout -->
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- A title label -->
+    <Label text="Student Management" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- A horizontal box for our input fields and button -->
+    <HBox spacing="10">
+        <!-- TextFields for user input. fx:id links them to Java variables -->
+        <TextField fx:id="regField" promptText="Reg Number" prefWidth="120"/>
+        <TextField fx:id="firstNameField" promptText="First Name" prefWidth="120"/>
+        <TextField fx:id="lastNameField" promptText="Last Name" prefWidth="120"/>
+        <!-- The button that fires the event. onAction links to a method in Java -->
+        <Button fx:id="saveButton" text="Save Student" onAction="#handleSaveStudent"/>
+    </HBox>
+
+    <!-- A TableView to display the data. VBox.vgrow makes it expand -->
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+        <!-- Define the columns -->
+        <columns>
+            <TableColumn fx:id="colReg" text="Reg Number" prefWidth="120"/>
+            <TableColumn fx:id="colFirst" text="First Name" prefWidth="120"/>
+            <TableColumn fx:id="colLast" text="Last Name" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- A status label to show feedback to the user -->
+    <Label fx:id="statusLabel" text="Ready" textFill="blue"/>
+</VBox>
